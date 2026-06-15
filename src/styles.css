@@ -22,7 +22,7 @@ body {
   min-width: 320px;
   color: var(--ink);
   background: var(--cream);
-  font-family: Poppins, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 a {
