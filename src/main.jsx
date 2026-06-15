@@ -155,7 +155,13 @@ function App() {
       <section className="hero" aria-label="Clinica Principia">
         <header className="navbar">
           <a className="brand" href="#inicio" aria-label="Clinica Principia">
-            <img src="/logo-nav.png" alt="Clinica Principia" />
+            <img
+              src="/logo-nav-small.webp"
+              alt="Clínica Principia"
+              width="300"
+              height="101"
+              fetchPriority="high"
+            />
           </a>
 
           <nav className="nav-links" aria-label="Menu principal">
@@ -341,7 +347,14 @@ function App() {
         <div className="footer-inner">
           <div className="footer-brand">
             <a className="footer-logo" href="#inicio" aria-label="Voltar ao inicio">
-              <img src="/logo-nav.png" alt="Clinica Principia" />
+              <img
+                src="/logo-nav-small.webp"
+                alt="Clínica Principia"
+                width="300"
+                height="101"
+                loading="lazy"
+                decoding="async"
+              />
             </a>
             <h2 id="footer-title">Clínica Principia</h2>
             <p>
