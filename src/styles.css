@@ -1368,8 +1368,12 @@ img {
 
 @media (max-width: 680px) {
   .hero {
-    min-height: 780px;
-    background: #fff url('/bg-mobile.png') center top / cover no-repeat;
+    min-height: 860px;
+    background-color: #fff;
+    background-image: url('/bg-mobile.png');
+    background-repeat: no-repeat;
+    background-position: center 120px;
+    background-size: cover;
   }
 
   .navbar {
@@ -1391,7 +1395,7 @@ img {
   .hero-grid {
     min-height: calc(100vh - 68px);
     align-items: flex-start;
-    padding: clamp(38px, 9vh, 72px) 0 410px;
+    padding: clamp(38px, 9vh, 72px) 0 470px;
   }
 
   .hero-copy {
