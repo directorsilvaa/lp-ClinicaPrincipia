@@ -64,12 +64,20 @@ const actingAreas = [
 
 const units = [
   {
-    city: 'São Paulo',
-    address: 'Rua Joaquim Floriano, 533 - Itaim Bibi',
+    city: 'Butantã, SP',
+    lines: ['Rua Alvarenga, 220'],
   },
   {
-    city: 'Salvador',
-    address: 'Shopping Bela Vista - Pernambués',
+    city: 'Itaim Bibi, SP',
+    lines: ['Rua Joaquim Floriano, 533', 'Sala 1313'],
+  },
+  {
+    city: 'Brasília, DF',
+    lines: ['Centro Clínico OHB', 'Setor Hospitalar Sul', 'Bloco A, Sala 318'],
+  },
+  {
+    city: 'Salvador, BA',
+    lines: ['Centro Médico Bela Vista', 'Shopping Bela Vista', 'Rua Alameda Euvaldo Luz, 92 - Piso L2'],
   },
 ];
 
@@ -316,7 +324,11 @@ function App() {
                 <MapPin size={22} />
                 <div>
                   <h3>{unit.city}</h3>
-                  <p>{unit.address}</p>
+                  <p>
+                    {unit.lines.map((line) => (
+                      <span key={line}>{line}</span>
+                    ))}
+                  </p>
                 </div>
                 <CheckCircle2 size={18} />
               </article>
@@ -384,7 +396,7 @@ function App() {
           <span>© 2026 Clínica Principia. Todos os direitos reservados</span>
           <span>RT - Juliana Fiuza Rebouças | CRM 234106 | SP</span>
           <span>
-            <a href="#inicio">Política de Privacidade</a>
+            <a href="https://lp-clinica-principia.vercel.app/#inicio">Política de Privacidade</a>
             <a href="#inicio">Política de Cookies</a>
           </span>
         </div>

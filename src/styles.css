@@ -839,6 +839,10 @@ img {
   line-height: 1.45;
 }
 
+.unit-card p span {
+  display: block;
+}
+
 .section-how {
   background:
     linear-gradient(180deg, rgba(244, 251, 251, 0.98), rgba(244, 251, 251, 0.98)),
@@ -1364,7 +1368,8 @@ img {
 
 @media (max-width: 680px) {
   .hero {
-    background-position: 60% top;
+    min-height: 780px;
+    background: #fff url('/bg-mobile.png') center top / cover no-repeat;
   }
 
   .navbar {
@@ -1386,11 +1391,11 @@ img {
   .hero-grid {
     min-height: calc(100vh - 68px);
     align-items: flex-start;
-    padding: 64px 0 360px;
+    padding: clamp(38px, 9vh, 72px) 0 410px;
   }
 
   .hero-copy {
-    width: min(100%, 360px);
+    width: min(100%, 340px);
   }
 
   .hero-kicker {
@@ -1400,12 +1405,14 @@ img {
   }
 
   .hero h1 {
-    font-size: clamp(31px, 9vw, 42px);
+    font-size: clamp(30px, 8.4vw, 38px);
   }
 
   .lead {
-    margin-top: 18px;
-    font-size: 14px;
+    max-width: 320px;
+    margin-top: 16px;
+    font-size: 13.5px;
+    line-height: 1.32;
   }
 
   .primary-button {
