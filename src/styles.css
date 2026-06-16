@@ -1161,6 +1161,7 @@ img {
 .developer-credit img {
   width: 92px;
   height: auto;
+  filter: brightness(0) invert(1);
 }
 
 @keyframes card-enter {
