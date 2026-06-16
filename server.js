@@ -4,6 +4,7 @@ const path = require("path");
 
 const port = process.env.PORT || 3000;
 const distDir = path.join(__dirname, "dist");
+const basePath = normalizeBasePath(process.env.BASE_PATH || "/lp1");
 
 const contentTypes = {
   ".avif": "image/avif",
@@ -17,6 +18,11 @@ const contentTypes = {
   ".webmanifest": "application/manifest+json; charset=utf-8",
   ".webp": "image/webp",
 };
+
+function normalizeBasePath(value) {
+  const trimmed = value.trim().replace(/^\/+|\/+$/g, "");
+  return trimmed ? `/${trimmed}` : "";
+}
 
 function sendFile(res, filePath) {
   const ext = path.extname(filePath).toLowerCase();
@@ -34,7 +40,12 @@ function sendFile(res, filePath) {
 }
 
 const server = http.createServer((req, res) => {
-  const urlPath = decodeURIComponent((req.url || "/").split("?")[0]);
+  let urlPath = decodeURIComponent((req.url || "/").split("?")[0]);
+
+  if (basePath && (urlPath === basePath || urlPath.startsWith(`${basePath}/`))) {
+    urlPath = urlPath.slice(basePath.length) || "/";
+  }
+
   const requestedPath = path.normalize(path.join(distDir, urlPath));
 
   if (!requestedPath.startsWith(distDir)) {

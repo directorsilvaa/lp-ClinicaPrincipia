@@ -47,9 +47,9 @@ img {
   overflow: hidden;
   background-color: #fff;
   background-image: image-set(
-    url('/bg-herp.avif') type('image/avif'),
-    url('/bg-herp.webp') type('image/webp'),
-    url('/bg-herp.png') type('image/png')
+    url('bg-herp.avif') type('image/avif'),
+    url('bg-herp.webp') type('image/webp'),
+    url('bg-herp.png') type('image/png')
   );
   background-position: center top;
   background-size: cover;
@@ -1402,9 +1402,9 @@ img {
     min-height: 860px;
     background-color: #fff;
     background-image: image-set(
-      url('/bg-mobile.avif') type('image/avif'),
-      url('/bg-mobile.webp') type('image/webp'),
-      url('/bg-mobile.png') type('image/png')
+      url('bg-mobile.avif') type('image/avif'),
+      url('bg-mobile.webp') type('image/webp'),
+      url('bg-mobile.png') type('image/png')
     );
     background-repeat: no-repeat;
     background-position: center 120px;

@@ -156,7 +156,7 @@ function App() {
         <header className="navbar">
           <a className="brand" href="#inicio" aria-label="Clinica Principia">
             <img
-              src="/logo-nav-small.webp"
+              src="logo-nav-small.webp"
               alt="Clínica Principia"
               width="300"
               height="101"
@@ -348,7 +348,7 @@ function App() {
           <div className="footer-brand">
             <a className="footer-logo" href="#inicio" aria-label="Voltar ao inicio">
               <img
-                src="/logo-nav-small.webp"
+                src="logo-nav-small.webp"
                 alt="Clínica Principia"
                 width="300"
                 height="101"
@@ -415,7 +415,7 @@ function App() {
             aria-label="Acessar site da CORPAD"
           >
             <span>Desenvolvido por</span>
-            <img src="/logocorpad.png" alt="CORPAD" width="146" height="50" loading="lazy" decoding="async" />
+            <img src="logocorpad.png" alt="CORPAD" width="146" height="50" loading="lazy" decoding="async" />
           </a>
           <span>RT - Juliana Fiuza Rebouças | CRM 234106 | SP</span>
           <span>
