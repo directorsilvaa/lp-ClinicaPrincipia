@@ -4,7 +4,7 @@ const path = require("path");
 
 const port = process.env.PORT || 3000;
 const distDir = path.join(__dirname, "dist");
-const basePath = normalizeBasePath(process.env.BASE_PATH || "/lp1");
+const basePath = normalizeBasePath(process.env.BASE_PATH || "/lp");
 
 const contentTypes = {
   ".avif": "image/avif",
