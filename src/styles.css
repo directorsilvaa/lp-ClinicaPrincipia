@@ -33,6 +33,7 @@ a {
 img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 .site-shell {
@@ -1004,6 +1005,7 @@ img {
 
 .footer-logo img {
   width: 128px;
+  height: auto;
 }
 
 .footer-brand h2 {
@@ -1129,6 +1131,7 @@ img {
 
 .footer-bottom {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 18px;
   margin-top: 54px;
@@ -1137,6 +1140,27 @@ img {
   color: rgba(255, 255, 255, 0.58);
   font-size: 11px;
   line-height: 1.5;
+}
+
+.developer-credit {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.developer-credit:hover {
+  opacity: 0.86;
+  transform: translateY(-1px);
+}
+
+.developer-credit img {
+  width: 92px;
+  height: auto;
 }
 
 @keyframes card-enter {

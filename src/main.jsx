@@ -73,7 +73,7 @@ const units = [
   },
   {
     city: 'Brasília, DF',
-    lines: ['Centro Clínico OHB', 'Setor Hospitalar Sul', 'Bloco A, Sala 318'],
+    lines: ['OHB Centro Médico', 'Bloco B - Sala 616', 'SHLS Quadra 716 - Conjunto L', 'Asa Sul - Brasília/DF', 'CEP 70390-700'],
   },
   {
     city: 'Salvador, BA',
@@ -102,7 +102,7 @@ const footerUnits = [
   },
   {
     city: 'Brasília, DF',
-    lines: ['Centro Clínico OHB', 'Setor Hospitalar Sul', 'Bloco A, Sala 318'],
+    lines: ['OHB Centro Médico', 'Bloco B - Sala 616', 'SHLS Quadra 716 - Conjunto L', 'Asa Sul - Brasília/DF', 'CEP 70390-700'],
   },
   {
     city: 'Salvador, BA',
@@ -407,6 +407,16 @@ function App() {
 
         <div className="footer-bottom">
           <span>© 2026 Clínica Principia. Todos os direitos reservados</span>
+          <a
+            className="developer-credit"
+            href="https://corpad.com.br"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Acessar site da CORPAD"
+          >
+            <span>Desenvolvido por</span>
+            <img src="/logocorpad.png" alt="CORPAD" width="146" height="50" loading="lazy" decoding="async" />
+          </a>
           <span>RT - Juliana Fiuza Rebouças | CRM 234106 | SP</span>
           <span>
             <a href="https://lp-clinica-principia.vercel.app/#inicio">Política de Privacidade</a>
