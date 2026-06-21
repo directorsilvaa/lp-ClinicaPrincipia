@@ -2,7 +2,7 @@
   "scripts": {
     "dev": "vite",
     "start": "node app.js",
-    "build": "vite build && node scripts/inline-css.mjs"
+    "build": "vite build && node scripts/inline-css.mjs && node scripts/generate-static-seo.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "5.1.4",

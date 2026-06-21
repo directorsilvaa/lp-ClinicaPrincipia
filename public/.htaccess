@@ -1,0 +1,10 @@
+DirectoryIndex index.html
+
+RewriteEngine On
+RewriteBase /lp/
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+RewriteRule ^ index.html [L]
