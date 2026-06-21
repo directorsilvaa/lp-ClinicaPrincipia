@@ -13,8 +13,11 @@
       content="Clínica Principia, ortopedia, reumatologia, neurocirurgia, medicina da dor, articulações, Itaim Bibi, Butantã, Brasília, Salvador"
     />
     <meta name="robots" content="index, follow" />
+    <meta name="author" content="Clínica Principia" />
+    <meta name="geo.region" content="BR-SP" />
+    <meta name="geo.placename" content="São Paulo, Brasília e Salvador" />
     <meta name="theme-color" content="#089da4" />
-    <link rel="canonical" href="https://lp-clinica-principia.vercel.app/" />
+    <link rel="canonical" href="https://principiamedicina.com.br/lp/" />
     <!-- Meta Pixel Code -->
     <script>
       !function(f,b,e,v,n,t,s)
@@ -52,14 +55,14 @@
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
-    <meta property="og:url" content="https://lp-clinica-principia.vercel.app/" />
+    <meta property="og:url" content="https://principiamedicina.com.br/lp/" />
     <meta property="og:site_name" content="Clínica Principia" />
     <meta property="og:title" content="Clínica Principia | Especialistas em articulações" />
     <meta
       property="og:description"
       content="Avaliação precisa, tratamento personalizado e acompanhamento humanizado para recuperar sua qualidade de vida."
     />
-    <meta property="og:image" content="https://lp-clinica-principia.vercel.app/logo.png" />
+    <meta property="og:image" content="https://principiamedicina.com.br/lp/logo.png" />
     <meta property="og:image:alt" content="Logo da Clínica Principia" />
 
     <meta name="twitter:card" content="summary_large_image" />
@@ -68,52 +71,124 @@
       name="twitter:description"
       content="Ortopedia, reumatologia, neurocirurgia, medicina da dor e atendimento humanizado."
     />
-    <meta name="twitter:image" content="https://lp-clinica-principia.vercel.app/logo.png" />
+    <meta name="twitter:image" content="https://principiamedicina.com.br/lp/logo.png" />
 
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "MedicalClinic",
-        "name": "Clínica Principia",
-        "url": "https://lp-clinica-principia.vercel.app/",
-        "logo": "https://lp-clinica-principia.vercel.app/logo.png",
-        "image": "https://lp-clinica-principia.vercel.app/hero-doctor.png",
-        "telephone": "+55-11-2305-9638",
-        "medicalSpecialty": [
-          "Ortopedia",
-          "Reumatologia",
-          "Neurocirurgia",
-          "Medicina da Dor",
-          "Medicina do Esporte"
-        ],
-        "address": [
+        "@graph": [
           {
-            "@type": "PostalAddress",
-            "streetAddress": "Rua Alvarenga, 220",
-            "addressLocality": "São Paulo",
-            "addressRegion": "SP",
-            "addressCountry": "BR"
+            "@type": "WebSite",
+            "@id": "https://principiamedicina.com.br/lp/#website",
+            "name": "Clínica Principia",
+            "url": "https://principiamedicina.com.br/lp/",
+            "inLanguage": "pt-BR"
           },
           {
-            "@type": "PostalAddress",
-            "streetAddress": "Rua Joaquim Floriano, 533, Sala 1313",
-            "addressLocality": "São Paulo",
-            "addressRegion": "SP",
-            "addressCountry": "BR"
+            "@type": "MedicalClinic",
+            "@id": "https://principiamedicina.com.br/lp/#clinic",
+            "name": "Clínica Principia",
+            "url": "https://principiamedicina.com.br/lp/",
+            "logo": "https://principiamedicina.com.br/lp/logo.png",
+            "image": "https://principiamedicina.com.br/lp/logo.png",
+            "telephone": "+55-11-2305-9638",
+            "email": "contato@clinicaprincipia.com.br",
+            "priceRange": "$$",
+            "areaServed": ["São Paulo", "Brasília", "Salvador"],
+            "medicalSpecialty": [
+              "Ortopedia",
+              "Reumatologia",
+              "Neurocirurgia",
+              "Medicina da Dor",
+              "Medicina do Esporte",
+              "Traumatologia",
+              "Endocrinologia",
+              "Ginecologia"
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+55-11-97961-0690",
+              "contactType": "Agendamento",
+              "availableLanguage": "pt-BR"
+            },
+            "address": [
+              {
+                "@type": "PostalAddress",
+                "streetAddress": "Rua Alvarenga, 220",
+                "addressLocality": "São Paulo",
+                "addressRegion": "SP",
+                "addressCountry": "BR"
+              },
+              {
+                "@type": "PostalAddress",
+                "streetAddress": "Rua Joaquim Floriano, 533, Sala 1313",
+                "addressLocality": "São Paulo",
+                "addressRegion": "SP",
+                "addressCountry": "BR"
+              },
+              {
+                "@type": "PostalAddress",
+                "streetAddress": "OHB Centro Médico, Bloco B - Sala 616, SHLS Quadra 716 - Conjunto L, Asa Sul, CEP 70390-700",
+                "addressLocality": "Brasília",
+                "addressRegion": "DF",
+                "addressCountry": "BR"
+              },
+              {
+                "@type": "PostalAddress",
+                "streetAddress": "Centro Médico Bela Vista, Shopping Bela Vista, Rua Alameda Euvaldo Luz, 92 - Piso L2",
+                "addressLocality": "Salvador",
+                "addressRegion": "BA",
+                "addressCountry": "BR"
+              }
+            ]
           },
           {
-            "@type": "PostalAddress",
-            "streetAddress": "OHB Centro Médico, Bloco B - Sala 616, SHLS Quadra 716 - Conjunto L, Asa Sul, CEP 70390-700",
-            "addressLocality": "Brasília",
-            "addressRegion": "DF",
-            "addressCountry": "BR"
+            "@type": "FAQPage",
+            "@id": "https://principiamedicina.com.br/lp/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "A Clínica Principia atende quais especialidades?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A Clínica Principia atende articulações, coluna, ortopedia, reumatologia, neurocirurgia, medicina da dor e medicina do esporte."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Onde ficam as unidades da Clínica Principia?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A Clínica Principia possui unidades em São Paulo, nos bairros Butantã e Itaim Bibi, além de unidades em Brasília e Salvador."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Como agendar uma consulta?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "O agendamento pode ser feito pelo WhatsApp da clínica. A equipe orienta sobre disponibilidade, convênios e especialidade indicada."
+                }
+              }
+            ]
           },
           {
-            "@type": "PostalAddress",
-            "streetAddress": "Centro Médico Bela Vista, Shopping Bela Vista, Rua Alameda Euvaldo Luz, 92 - Piso L2",
-            "addressLocality": "Salvador",
-            "addressRegion": "BA",
-            "addressCountry": "BR"
+            "@type": "BreadcrumbList",
+            "@id": "https://principiamedicina.com.br/lp/#breadcrumbs",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Início",
+                "item": "https://principiamedicina.com.br/lp/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Unidades",
+                "item": "https://principiamedicina.com.br/lp/#unidades"
+              }
+            ]
           }
         ]
       }
@@ -123,7 +198,48 @@
     <noscript><img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=541322835673946&ev=PageView&noscript=1"
     /></noscript>
-    <div id="root"></div>
+    <div id="root">
+      <main>
+        <section>
+          <h1>Clínica Principia: especialistas em articulações em São Paulo, Brasília e Salvador</h1>
+          <p>
+            A Clínica Principia oferece avaliação médica, tratamento personalizado e acompanhamento humanizado
+            para articulações, coluna, ortopedia, reumatologia, neurocirurgia, medicina da dor e medicina do esporte.
+          </p>
+          <p>
+            O atendimento acontece por agendamento, com orientação sobre convênios selecionados, consulta particular
+            e escolha da unidade mais conveniente.
+          </p>
+        </section>
+        <section>
+          <h2>Especialidades</h2>
+          <ul>
+            <li>Coluna vertebral, hérnias, escoliose, estenose e dores crônicas.</li>
+            <li>Articulações, joelhos, quadris e ombros.</li>
+            <li>Neurocirurgia de coluna e procedimentos minimamente invasivos.</li>
+            <li>Ortopedia, reumatologia, medicina da dor e medicina do esporte.</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Unidades da Clínica Principia</h2>
+          <address>
+            Butantã, São Paulo: Rua Alvarenga, 220.<br />
+            Itaim Bibi, São Paulo: Rua Joaquim Floriano, 533, Sala 1313.<br />
+            Brasília, DF: OHB Centro Médico, Bloco B - Sala 616, SHLS Quadra 716 - Conjunto L, Asa Sul, CEP 70390-700.<br />
+            Salvador, BA: Centro Médico Bela Vista, Shopping Bela Vista, Rua Alameda Euvaldo Luz, 92 - Piso L2.
+          </address>
+        </section>
+        <section>
+          <h2>Perguntas frequentes</h2>
+          <h3>A Clínica Principia atende quais especialidades?</h3>
+          <p>A clínica atende articulações, coluna, ortopedia, reumatologia, neurocirurgia, medicina da dor e medicina do esporte.</p>
+          <h3>Onde ficam as unidades?</h3>
+          <p>As unidades ficam em São Paulo, nos bairros Butantã e Itaim Bibi, além de Brasília e Salvador.</p>
+          <h3>Como agendar uma consulta?</h3>
+          <p>O agendamento pode ser feito pelo WhatsApp (11) 97961-0690 ou pelo telefone (11) 2305-9638.</p>
+        </section>
+      </main>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

@@ -147,6 +147,29 @@ const acceptedPlans = [
   },
 ];
 
+const faqs = [
+  {
+    question: 'A Clínica Principia atende quais especialidades?',
+    answer:
+      'A Clínica Principia atende articulações, coluna, ortopedia, reumatologia, neurocirurgia, medicina da dor e medicina do esporte.',
+  },
+  {
+    question: 'Onde ficam as unidades da Clínica Principia?',
+    answer:
+      'As unidades ficam em São Paulo, nos bairros Butantã e Itaim Bibi, além de Brasília e Salvador.',
+  },
+  {
+    question: 'Como agendar uma consulta?',
+    answer:
+      'O agendamento pode ser feito pelo WhatsApp da clínica. A equipe orienta sobre disponibilidade, convênios e a especialidade indicada.',
+  },
+  {
+    question: 'A clínica atende convênio e particular?',
+    answer:
+      'Sim. A equipe confirma a cobertura disponível antes do agendamento e também orienta pacientes para atendimento particular.',
+  },
+];
+
 function App() {
   const carouselPlans = [...acceptedPlans, ...acceptedPlans];
 
@@ -309,6 +332,27 @@ function App() {
         </div>
       </section>
 
+      <section className="section section-faq" id="duvidas" aria-labelledby="duvidas-title">
+        <div className="section-inner">
+          <div className="section-heading">
+            <p className="section-kicker">Dúvidas frequentes</p>
+            <h2 id="duvidas-title">Respostas diretas para escolher seu atendimento.</h2>
+            <p>
+              Informações essenciais sobre especialidades, unidades, convênios e agendamento na Clínica Principia.
+            </p>
+          </div>
+
+          <div className="faq-list">
+            {faqs.map((item) => (
+              <article className="faq-item" key={item.question}>
+                <h3>{item.question}</h3>
+                <p>{item.answer}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="section section-units" id="unidades" aria-labelledby="unidades-title">
         <div className="section-inner two-column">
           <div className="section-copy">
@@ -419,7 +463,7 @@ function App() {
           </a>
           <span>RT - Juliana Fiuza Rebouças | CRM 234106 | SP</span>
           <span>
-            <a href="https://lp-clinica-principia.vercel.app/#inicio">Política de Privacidade</a>
+            <a href="https://principiamedicina.com.br/lp/#inicio">Política de Privacidade</a>
             <a href="#inicio">Política de Cookies</a>
           </span>
         </div>
