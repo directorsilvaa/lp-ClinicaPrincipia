@@ -427,9 +427,9 @@ function App() {
               <MessageCircle size={16} />
               (11) 97961-0690
             </a>
-            <a href="mailto:contato@clinicaprincipia.com.br">
+            <a href="mailto:contato@principiamedicina.com.br">
               <Mail size={16} />
-              contato@clinicaprincipia.com.br
+              contato@principiamedicina.com.br
             </a>
           </div>
 

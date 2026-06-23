@@ -4,6 +4,13 @@ import path from 'node:path';
 const distDir = path.resolve('dist');
 const siteUrl = 'https://principiamedicina.com.br/lp';
 const generatedAt = new Date().toISOString().slice(0, 10);
+const contactEmail = 'contato@principiamedicina.com.br';
+const medicalDirector = {
+  '@type': 'Person',
+  name: 'Juliana Fiuza Rebouças',
+  honorificPrefix: 'Dra.',
+  identifier: 'CRM 234106 SP',
+};
 
 const specialties = [
   'Ortopedia',
@@ -14,6 +21,43 @@ const specialties = [
   'Traumatologia',
   'Endocrinologia',
   'Ginecologia',
+];
+
+const acceptedPlans = ['Bradesco Saúde', 'SulAmérica', 'Medservice', 'Amil', 'GEAP', 'OMINT'];
+
+const actingAreas = [
+  {
+    title: 'Coluna Vertebral',
+    description: 'Diagnóstico e tratamento de hérnias, escoliose, estenose e dores crônicas da coluna.',
+  },
+  {
+    title: 'Articulações',
+    description: 'Joelhos, quadris e ombros com cuidado especializado.',
+  },
+  {
+    title: 'Neurocirurgia',
+    description: 'Procedimentos neurocirúrgicos de coluna minimamente invasivos.',
+  },
+  {
+    title: 'Lesões Esportivas',
+    description: 'Retorno seguro ao esporte após lesões musculoesqueléticas.',
+  },
+  {
+    title: 'Ortopedia',
+    description: 'Avaliação ortopédica completa com especialistas certificados.',
+  },
+  {
+    title: 'Dor Cervical',
+    description: 'Tratamento para dores no pescoço e região cervical.',
+  },
+  {
+    title: 'Reumatologia',
+    description: 'Artrite, artrose e doenças autoimunes articulares.',
+  },
+  {
+    title: 'Medicina do Esporte',
+    description: 'Performance e prevenção para atletas e praticantes.',
+  },
 ];
 
 const faqs = [
@@ -159,7 +203,8 @@ function buildSchema(route) {
     image: `${siteUrl}/logo.png`,
     logo: `${siteUrl}/logo.png`,
     telephone: '+55-11-2305-9638',
-    email: 'contato@clinicaprincipia.com.br',
+    email: contactEmail,
+    medicalDirector,
     priceRange: '$$',
     medicalSpecialty: specialties,
     areaServed: {
@@ -203,6 +248,11 @@ function buildSchema(route) {
         about: localClinics.map((clinic) => ({ '@id': clinic['@id'] })),
       },
       ...localClinics,
+      {
+        '@type': 'SpeakableSpecification',
+        '@id': `${routeUrl}#speakable`,
+        cssSelector: ['h1', 'section h2', 'section h3'],
+      },
       {
         '@type': 'FAQPage',
         '@id': `${routeUrl}#faq`,
@@ -250,12 +300,54 @@ function buildFallbackContent(route) {
     .map((item) => `<h3>${escapeHtml(item.question)}</h3><p>${escapeHtml(item.answer)}</p>`)
     .join('');
 
+  const planContent = acceptedPlans.map((plan) => `<li>${escapeHtml(plan)}</li>`).join('');
+
+  const actingAreaContent = actingAreas
+    .map((area) => `<article><h3>${escapeHtml(area.title)}</h3><p>${escapeHtml(area.description)}</p></article>`)
+    .join('');
+
   return `<div id="root">
       <main>
         <section>
           <h1>${escapeHtml(route.heading)}</h1>
           <p>${escapeHtml(route.intro)}</p>
           <p>Agendamento por WhatsApp, confirmação de convênios selecionados e atendimento particular com orientação da equipe.</p>
+        </section>
+        <section id="inicio">
+          <h2>Agende sua consulta na Clínica Principia</h2>
+          <p>Especialistas em articulações que cuidam de você com avaliação precisa, tratamento personalizado, tecnologia e acompanhamento humanizado.</p>
+          <p><a href="https://wa.me/5511979610690">Agendar consulta pelo WhatsApp</a></p>
+        </section>
+        <section id="convenios">
+          <h2>Atendimento para planos selecionados e consultas particulares</h2>
+          <p>A equipe orienta cada paciente antes da consulta, confirma cobertura disponível e organiza o melhor caminho para o atendimento.</p>
+          <ul>${planContent}</ul>
+          <p>Disponibilidade pode variar. Confirme com nossa equipe.</p>
+          <ul>
+            <li>Confirmação de convênio antes do agendamento.</li>
+            <li>Triagem cuidadosa para direcionar a especialidade.</li>
+            <li>Opção de atendimento particular com horário marcado.</li>
+          </ul>
+        </section>
+        <section id="areas">
+          <h2>Áreas de atuação</h2>
+          <p>Avaliação e acompanhamento especializado para condições musculoesqueléticas e articulares.</p>
+          ${actingAreaContent}
+        </section>
+        <section id="como">
+          <h2>Como funciona</h2>
+          <article>
+            <h3>Agendamento</h3>
+            <p>Você chama pelo WhatsApp e recebe orientação para marcar sua avaliação.</p>
+          </article>
+          <article>
+            <h3>Avaliação médica</h3>
+            <p>O especialista entende seu histórico, sintomas e exames com atenção.</p>
+          </article>
+          <article>
+            <h3>Plano de cuidado</h3>
+            <p>O tratamento é definido com segurança, clareza e acompanhamento próximo.</p>
+          </article>
         </section>
         <section>
           <h2>Especialidades atendidas</h2>
@@ -269,6 +361,16 @@ function buildFallbackContent(route) {
           <h2>Perguntas frequentes</h2>
           ${faqContent}
         </section>
+        <footer>
+          <h2>Clínica Principia</h2>
+          <p>RT - Juliana Fiuza Rebouças | CRM 234106 | SP</p>
+          <p>WhatsApp: <a href="https://wa.me/5511979610690">(11) 97961-0690</a></p>
+          <p>Telefone: <a href="tel:+551123059638">(11) 2305-9638</a></p>
+          <p>E-mail: <a href="mailto:${contactEmail}">${contactEmail}</a></p>
+          <p>© 2026 Clínica Principia. Todos os direitos reservados.</p>
+          <p><a href="https://corpad.com.br">Desenvolvido por CORPAD</a></p>
+          <p><a href="https://principiamedicina.com.br/lp/#inicio">Política de Privacidade</a> <a href="#inicio">Política de Cookies</a></p>
+        </footer>
       </main>
     </div>`;
 }
@@ -277,6 +379,7 @@ function replaceMeta(html, route, { nested = false } = {}) {
   const canonicalUrl = publicUrl(route.path);
   let nextHtml = html
     .replace(/<title>.*?<\/title>/, `<title>${escapeHtml(route.title)}</title>`)
+    .replace(/\s*<meta\s+name="keywords"\s+content="[^"]*"\s*\/>/, '')
     .replace(
       /<meta\s+name="description"\s+content="[^"]*"\s*\/>/,
       `<meta name="description" content="${escapeHtml(route.description)}" />`
@@ -302,7 +405,7 @@ function replaceMeta(html, route, { nested = false } = {}) {
       /<script type="application\/ld\+json">[\s\S]*?<\/script>/,
       `<script type="application/ld+json">\n${JSON.stringify(buildSchema(route), null, 2)}\n    </script>`
     )
-    .replace(/<div id="root">[\s\S]*?<\/div>\s*<script type="module"/, `${buildFallbackContent(route)}\n    <script type="module"`);
+    .replace(/<div id="root">[\s\S]*?<\/div>\s*<\/body>/, `${buildFallbackContent(route)}\n  </body>`);
 
   if (nested && !nextHtml.includes('<base href="/lp/" />')) {
     nextHtml = nextHtml.replace('<meta name="viewport" content="width=device-width, initial-scale=1.0" />', '<meta name="viewport" content="width=device-width, initial-scale=1.0" />\n    <base href="/lp/" />');

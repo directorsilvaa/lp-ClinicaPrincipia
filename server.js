@@ -43,8 +43,10 @@ const contentTypes = {
   ".json": "application/json; charset=utf-8",
   ".png": "image/png",
   ".svg": "image/svg+xml",
+  ".txt": "text/plain; charset=utf-8",
   ".webmanifest": "application/manifest+json; charset=utf-8",
   ".webp": "image/webp",
+  ".xml": "application/xml; charset=utf-8",
 };
 
 function normalizeBasePath(value) {
@@ -186,7 +188,16 @@ const server = http.createServer((req, res) => {
       return;
     }
 
-    const routePath = seoRoutes.some((route) => route.path === urlPath) ? urlPath : "/";
+    if (!error && stats.isDirectory()) {
+      const directoryIndexPath = path.join(requestedPath, "index.html");
+      if (directoryIndexPath.startsWith(distDir) && fs.existsSync(directoryIndexPath)) {
+        sendFile(res, directoryIndexPath);
+        return;
+      }
+    }
+
+    const normalizedRoutePath = urlPath.replace(/\/+$/g, "") || "/";
+    const routePath = seoRoutes.some((route) => route.path === normalizedRoutePath) ? normalizedRoutePath : "/";
     sendIndex(res, routePath);
   });
 });

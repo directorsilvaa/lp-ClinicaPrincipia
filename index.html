@@ -8,28 +8,34 @@
       name="description"
       content="Clínica Principia: especialistas em articulações, ortopedia, reumatologia, neurocirurgia, medicina da dor e atendimento humanizado em São Paulo, Brasília e Salvador."
     />
-    <meta
-      name="keywords"
-      content="Clínica Principia, ortopedia, reumatologia, neurocirurgia, medicina da dor, articulações, Itaim Bibi, Butantã, Brasília, Salvador"
-    />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Clínica Principia" />
     <meta name="geo.region" content="BR-SP" />
     <meta name="geo.placename" content="São Paulo, Brasília e Salvador" />
     <meta name="theme-color" content="#089da4" />
     <link rel="canonical" href="https://principiamedicina.com.br/lp/" />
+    <link rel="alternate" type="text/plain" href="/lp/llms.txt" title="Resumo para ferramentas de IA" />
     <!-- Meta Pixel Code -->
     <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '541322835673946');
-      fbq('track', 'PageView');
+      window.addEventListener('load', function () {
+        var loadPixel = function () {
+          !function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '541322835673946');
+          fbq('track', 'PageView');
+        };
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(loadPixel, { timeout: 2500 });
+        } else {
+          setTimeout(loadPixel, 1500);
+        }
+      });
     </script>
     <!-- End Meta Pixel Code -->
     <link
@@ -92,7 +98,13 @@
             "logo": "https://principiamedicina.com.br/lp/logo.png",
             "image": "https://principiamedicina.com.br/lp/logo.png",
             "telephone": "+55-11-2305-9638",
-            "email": "contato@clinicaprincipia.com.br",
+            "email": "contato@principiamedicina.com.br",
+            "medicalDirector": {
+              "@type": "Person",
+              "name": "Juliana Fiuza Rebouças",
+              "honorificPrefix": "Dra.",
+              "identifier": "CRM 234106 SP"
+            },
             "priceRange": "$$",
             "areaServed": ["São Paulo", "Brasília", "Salvador"],
             "medicalSpecialty": [
@@ -141,6 +153,11 @@
                 "addressCountry": "BR"
               }
             ]
+          },
+          {
+            "@type": "SpeakableSpecification",
+            "@id": "https://principiamedicina.com.br/lp/#speakable",
+            "cssSelector": ["h1", "section h2", "section h3"]
           },
           {
             "@type": "FAQPage",

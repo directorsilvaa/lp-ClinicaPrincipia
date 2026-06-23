@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://principiamedicina.com.br/lp/sitemap.xml
